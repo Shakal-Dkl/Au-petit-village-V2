@@ -1,0 +1,186 @@
+
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.hero h1 {
+  font-family: 'Bubbleboddy Neue', cursive;
+  color: #DA001E;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #151217;
+}
+
+.catalog-header {
+  margin-bottom: 2rem;
+}
+
+.catalog-header h2 {
+  font-family: 'Bubbleboddy Neue', cursive;
+  color: #151217;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.search-container {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: 2px solid #FDD90B;
+  border-radius: 25px;
+  width: 300px;
+  max-width: 100%;
+  outline: none;
+  background-color: white;
+}
+
+.search-input:focus {
+  border-color: #DA001E;
+  box-shadow: 0 0 5px rgba(218, 0, 30, 0.3);
+}
+
+.sort-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.sort-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #FDD90B;
+  color: #151217;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.sort-btn:hover {
+  background-color: #DA001E;
+  color: white;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.product-card {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.product-image {
+  height: 250px;
+  overflow: hidden;
+  background-color: #F9D0A3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.product-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.product-info h3 {
+  font-family: 'Bubbleboddy Neue', cursive;
+  color: #DA001E;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #151217;
+  margin-bottom: 0.5rem;
+}
+
+.product-quote {
+  font-style: italic;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .search-input {
+    width: 100%;
+  }
+  
+  .sort-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+}
+*/
+
+// ========== 17. components/about/about.component.ts ==========
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-about',
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.component.css']
+})
+export class AboutComponent {
+  constructor() { }
+}
