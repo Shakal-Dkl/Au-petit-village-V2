@@ -1,1 +1,36 @@
-<p>product works!</p>
+
+<div class="product-container">
+  <div *ngIf="product; else notFound">
+    <div class="product-detail">
+      <div class="product-image-large">
+        <img [src]="'assets/images/' + product.image" 
+             [alt]="product.name"
+             onerror="this.src='assets/images/placeholder.png'">
+      </div>
+      
+      <div class="product-info-detail">
+        <h1>{{ product.name }}</h1>
+        <p class="product-price-large">{{ product.price }}€</p>
+        <div class="product-quote-large">
+          <p>"{{ product.quote }}"</p>
+        </div>
+        <div class="product-description">
+          <h3>Description</h3>
+          <p>{{ product.description }}</p>
+        </div>
+        <div class="product-actions">
+          <button class="btn-primary" (click)="addToCart()">Ajouter au panier</button>
+          <button class="btn-secondary" routerLink="/">Retour au catalogue</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <ng-template #notFound>
+    <div class="not-found">
+      <h1>Produit non trouvé</h1>
+      <p>Désolé, ce produit n'existe pas dans notre catalogue.</p>
+      <button class="btn-primary" routerLink="/">Retour au catalogue</button>
+    </div>
+  </ng-template>
+</div>
