@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+
+
+
 import { App } from './app';
 import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
@@ -27,7 +31,8 @@ export const routes: Routes = [
     SortByPricePipe,
     FilterByNamePipe
   ],
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), BrowserModule,
+    AppRoutingModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
