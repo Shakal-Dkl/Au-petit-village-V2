@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "au-petit-village": {
+    "Au_petit_village": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -23,12 +23,7 @@
             ],
             "styles": [
               "src/styles.css"
-            ],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            ]
           },
           "configurations": {
             "production": {
@@ -58,10 +53,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "au-petit-village:build:production"
+              "buildTarget": "Au_petit_village:build:production"
             },
             "development": {
-              "buildTarget": "au-petit-village:build:development"
+              "buildTarget": "Au_petit_village:build:development"
             }
           },
           "defaultConfiguration": "development"
