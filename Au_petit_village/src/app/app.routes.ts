@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { App } from './app';
+import { Header } from './components/header/header';
+import { Footer } from './components/footer/footer';
 import { Home } from './components/home/home';
 import { About } from './components/about/about';
 import { Product } from './components/product/product';
+import { SortByPricePipe } from './pipes/sort-by-price-pipe';
+import { FilterByNamePipe } from './pipes/filter-by-name-pipe';
 
 const routes: Routes = [
   { path: '', component: Home },
@@ -12,6 +17,16 @@ const routes: Routes = [
 ];
 
 @NgModule({
+   declarations: [
+    App,
+    Header,
+    Footer,
+    Home,
+    About,
+    Product,
+    SortByPricePipe,
+    FilterByNamePipe
+  ],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
