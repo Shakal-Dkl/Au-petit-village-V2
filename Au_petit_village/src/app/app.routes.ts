@@ -5,14 +5,14 @@ import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
 import { Home } from './components/home/home';
 import { About } from './components/about/about';
-import { Product } from './components/product/product';
+import { product} from './components/product/product';
 import { SortByPricePipe } from './pipes/sort-by-price-pipe';
 import { FilterByNamePipe } from './pipes/filter-by-name-pipe';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', component: Home },
   { path: 'about', component: About },
-  { path: 'product/:id', component: Product },
+  { path: 'product/:id', component: product },
   { path: '**', redirectTo: '' }
 ];
 
@@ -23,7 +23,7 @@ const routes: Routes = [
     Footer,
     Home,
     About,
-    Product,
+    product,
     SortByPricePipe,
     FilterByNamePipe
   ],
