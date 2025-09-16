@@ -1,11 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService, Product } from '../../services/products';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { FilterByNamePipe } from '../../pipes/filter-by-name-pipe';
+import { SortByPricePipe } from '../../pipes/sort-by-price-pipe';
 
 
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  standalone: true,
+  imports: [
+    CommonModule,
+    RouterLink,
+    FilterByNamePipe,
+    SortByPricePipe
+  ],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
