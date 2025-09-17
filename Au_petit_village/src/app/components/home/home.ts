@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService, Product } from '../../services/products';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { FilterByNamePipe } from '../../pipes/filter-by-name-pipe';
 import { SortByPricePipe } from '../../pipes/sort-by-price-pipe';
 
@@ -14,14 +15,15 @@ import { SortByPricePipe } from '../../pipes/sort-by-price-pipe';
     CommonModule,
     RouterLink,
     FilterByNamePipe,
-    SortByPricePipe
+    SortByPricePipe,
+    FormsModule,
   ],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
 export class Home implements OnInit {
   products: Product[] = [];
-  searchTerm: string = '';
+  searchText: string = '';
   sortOrder: 'asc' | 'desc' = 'asc';
 
   constructor(private productsService: ProductsService) { } 
@@ -29,7 +31,7 @@ export class Home implements OnInit {
     this.products = this.productsService.getAllProducts();
   }
   onSearchChange(event: any): void {
-    this.searchTerm = event.target.value;
+    this.searchText = event.target.value;
   }
 
   sortByPriceAsc(): void {

@@ -1,44 +1,32 @@
-
-<div class="home-container">
-  <section class="hero">
-    <h1>Bienvenue chez Au petit village</h1>
-    <p>Découvrez notre collection de figurines Astérix & Obélix faites main avec passion !</p>
-  </section>
-
-  <section class="catalog">
-    <div class="catalog-header">
-      <h2>Notre catalogue</h2>
-      
-      <div class="search-container">
-        <input 
-          type="text" 
-          placeholder="Rechercher une figurine..." 
-          class="search-input"
-          (input)="onSearchChange($event)">
-      </div>
-
-      <div class="sort-buttons">
-        <button class="sort-btn" (click)="sortByPriceAsc()">Prix croissant</button>
-        <button class="sort-btn" (click)="sortByPriceDesc()">Prix décroissant</button>
+<div class="container py-4">
+  <!-- Search Bar -->
+  <div class="row mb-4">
+    <div class="col-md-6 mx-auto">
+      <div class="input-group">
+        <input type="text" 
+               class="form-control" 
+               [(ngModel)]="searchText" 
+               placeholder="Rechercher un produit...">
       </div>
     </div>
+  </div>
 
-    <div class="products-grid">
-      <div class="product-card" 
-           *ngFor="let product of products | filterByName:searchTerm | sortByPrice:sortOrder">
-        <a [routerLink]="['/product', product.id]" class="product-link">
-          <div class="product-image">
-            <img [src]="'assets/images/' + product.image" 
-                 [alt]="product.name" 
-                 onerror="this.src='assets/images/placeholder.png'">
+  <!-- Products Grid -->
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <div class="col" *ngFor="let product of products | filterByName:searchText | sortByPrice">
+      <div class="card h-100 shadow-sm">
+        <img [src]="'assets/images/' + product.image" 
+             [alt]="product.name" 
+             class="card-img-top p-3"
+             onerror="this.src='assets/images/placeholder.png'">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">{{ product.name }}</h5>
+          <p class="card-text text-danger fw-bold">{{ product.price }}€</p>
+          <div class="d-grid gap-2">
+            <a [routerLink]="['/product', product.id]" class="btn btn-primary">Voir détails</a>
           </div>
-          <div class="product-info">
-            <h3>{{ product.name }}</h3>
-            <p class="product-price">{{ product.price }}€</p>
-            <p class="product-quote">"{{ product.quote }}"</p>
-          </div>
-        </a>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 </div>

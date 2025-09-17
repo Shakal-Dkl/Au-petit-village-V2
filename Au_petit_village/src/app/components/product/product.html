@@ -1,36 +1,37 @@
-
-<div class="product-container">
-  <div *ngIf="product; else notFound">
-    <div class="product-detail">
-      <div class="product-image-large">
+<div class="container py-4">
+  <div class="row" *ngIf="product; else notFound">
+    <div class="col-md-6">
+      <div class="card shadow-sm">
         <img [src]="'assets/images/' + product.image" 
              [alt]="product.name"
+             class="card-img-top p-3"
              onerror="this.src='assets/images/placeholder.png'">
       </div>
-      
-      <div class="product-info-detail">
-        <h1>{{ product.name }}</h1>
-        <p class="product-price-large">{{ product.price }}€</p>
-        <div class="product-quote-large">
-          <p>"{{ product.quote }}"</p>
+    </div>
+    <div class="col-md-6">
+      <h1 class="fw-bold mb-3">{{ product.name }}</h1>
+      <p class="h2 text-danger fw-bold mb-4">{{ product.price }}€</p>
+      <div class="card mb-4">
+        <div class="card-body">
+          <p class="fst-italic">"{{ product.quote }}"</p>
         </div>
-        <div class="product-description">
-          <h3>Description</h3>
-          <p>{{ product.description }}</p>
-        </div>
-        <div class="product-actions">
-          <button class="btn-primary" (click)="addToCart()">Ajouter au panier</button>
-          <button class="btn-secondary" routerLink="/">Retour au catalogue</button>
-        </div>
+      </div>
+      <div class="mb-4">
+        <h3 class="fw-bold mb-3">Description</h3>
+        <p>{{ product.description }}</p>
+      </div>
+      <div class="d-grid gap-2 d-md-flex">
+        <button class="btn btn-primary" (click)="addToCart()">Ajouter au panier</button>
+        <button class="btn btn-secondary" routerLink="/">Retour au catalogue</button>
       </div>
     </div>
   </div>
-  
+
   <ng-template #notFound>
-    <div class="not-found">
-      <h1>Produit non trouvé</h1>
-      <p>Désolé, ce produit n'existe pas dans notre catalogue.</p>
-      <button class="btn-primary" routerLink="/">Retour au catalogue</button>
+    <div class="text-center py-5">
+      <h1 class="fw-bold mb-3">Produit non trouvé</h1>
+      <p class="mb-4">Désolé, ce produit n'existe pas dans notre catalogue.</p>
+      <button class="btn btn-primary" routerLink="/">Retour au catalogue</button>
     </div>
   </ng-template>
 </div>
