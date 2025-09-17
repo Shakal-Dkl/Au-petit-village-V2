@@ -1,25 +1,36 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { ProductsService, Product } from '../../services/products';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  description: string;
+  quote?: string;
+}
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './product.html',
   styleUrls: ['./product.css']
 })
 export class product implements OnInit {
-  product: Product | undefined;
+  product?: Product;
 
-  constructor(
-    private route: ActivatedRoute,
-    private productsService: ProductsService
-  ) { }
+  constructor() {}
 
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.product = this.productsService.getProductById(id);
+    // Initialisation du produit
+  }
+
+  addToCart(): void {
+    if (this.product) {
+      console.log(`Produit ajouté au panier : ${this.product.name}`);
+      // Ajoutez ici la logique pour ajouter au panier
+    }
   }
 }
