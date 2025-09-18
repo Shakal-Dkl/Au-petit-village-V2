@@ -36,11 +36,12 @@ export class Home implements OnInit {
 
   sortByPriceAsc(): void {
     this.sortOrder = 'asc';
-    this.products = [...this.products].sort((a, b) => a.price - b.price);
+    this.products = this.productsService.getAllProducts().sort((a, b) => a.price - b.price);
   }
 
   sortByPriceDesc(): void {
     this.sortOrder = 'desc';
-    this.products = [...this.products].sort((a, b) => b.price - a.price);
+    this.products = this.productsService.getAllProducts().sort((a, b) => b.price - a.price);  
+
   }
 }
