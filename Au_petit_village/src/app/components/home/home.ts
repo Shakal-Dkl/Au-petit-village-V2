@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService, Product } from '../../services/products';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { RouterLink,} from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { FilterByNamePipe } from '../../pipes/filter-by-name-pipe';
 import { SortByPricePipe } from '../../pipes/sort-by-price-pipe';
