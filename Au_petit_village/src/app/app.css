@@ -7,6 +7,17 @@
 body {
   font-family: 'Comfortaa', sans-serif;
   background-color: #F9D0A3;
+  min-height: 100vh;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  flex: 1 0 auto;
 }
 
 h1, h2, h3 {
