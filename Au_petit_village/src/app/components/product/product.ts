@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { RouterLink, ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../../services/products';
 
 interface Product {
@@ -22,10 +22,18 @@ interface Product {
 export class product implements OnInit {
   product?: Product;
 
-  constructor() {}
+  constructor(
+    private route: ActivatedRoute,
+    private productsService: ProductsService
+  ) {}
 
   ngOnInit(): void {
-    // Initialisation du produit
+    this.route.params.subscribe(params => {
+      const id = parseInt(params['id']);
+      if (!isNaN(id)) {
+        this.product = this.productsService.getProductById(id);
+      }
+    });
   }
 
   addToCart(): void {
