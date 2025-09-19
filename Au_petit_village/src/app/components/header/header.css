@@ -1,3 +1,51 @@
 
 
 
+.navbar {
+  background-color: #151217; /* Couleur de fond */
+  color: #FDD90B; /* Couleur du texte */
+  padding: 1rem;
+}
+.navbar-brand {
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FDD90B; /* Couleur du texte */
+  text-decoration: none;
+}
+.navbar .nav-link {
+  color: #FDD90B;
+}
+.navbar .nav-link:hover {
+  color: #da001a; /* Couleur au survol */
+  text-decoration: underline;
+}
+.navbar-toggler {
+  border: none;
+  color: #FDD90B;
+}
+.navbar-toggler-icon::before {
+  content: "\2630";
+  color: #FDD90B;
+  font-size: 1.5rem;
+}
+#titre {
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #da001a; /* Couleur du texte */
+  text-decoration: none;
+  
+}
+.logo {
+  height: 70px; /* Ajustez la taille du logo selon vos besoins */
+  width: auto;
+}
+.titre {
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #da001a; /* Couleur du texte */
+  text-decoration: none;
+  margin-left: 15px;
+}

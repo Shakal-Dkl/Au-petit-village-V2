@@ -12,8 +12,8 @@ body {
   color: #FDD90B;}
 
   .sort-btn.active {
-  background-color: #FDD90B;
-  color: #151217;
+  background-color: #da001a;
+ 
 }
 
 .sort-buttons {
@@ -24,7 +24,22 @@ body {
 .sort-btn {
   margin: 0 5px;
   padding: 8px 16px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  background-color: #FDD90B;
   cursor: pointer;
+}
+.sort-btn:hover {
+  background-color: #da001a;
+  color: #151217;
+}
+#search-bar input {
+  background-color: #151217;
+  color: #FDD90B;
+  border-radius: 25px;
+  padding: 10px 20px;
+  width: 100%;
+  font-size: 1rem;
+}
+#search-bar input::placeholder {
+  color: #FDD90B;
+  opacity: 0.7;
 }

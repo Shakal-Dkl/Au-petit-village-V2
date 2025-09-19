@@ -8,8 +8,8 @@
 <div class="container py-4">
   <h2 class="text-center pb-5">Notre catalogue</h2>
   <!-- Barre de recherche -->
-  <div class="row mb-4">
-    <div class="col-md-6 mx-auto">
+  <div  class="row mb-4">
+    <div id="search-bar" class="col-md-6 mx-auto">
       <div class="input-group">
         <input type="text" 
                class="form-control" 
@@ -18,7 +18,7 @@
       </div>
     </div>
   </div>
-
+<!-- Boutons de tri--> 
   <div class="sort-buttons">
         <button class="sort-btn" 
                 [class.active]="sortOrder === 'asc'"
@@ -33,7 +33,7 @@
   </div>
 
   <!-- Grille des produits -->
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+  <div id="product-grid" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     <div class="col" *ngFor="let product of products | filterByName:searchText | sortByPrice">
       <div class="card h-100 shadow-sm">
         <img [src]="'assets/images/' + product.image" 
